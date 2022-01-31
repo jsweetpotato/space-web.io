@@ -1,15 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Bellefair&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Bellefair&display=swap");
 
 :root {
-  --clr-dark: #0B0D17;
-  --clr-light: #FFF;
-  --clr-primary: #D0D6F9;
+  --clr-dark: #0b0d17;
+  --clr-light: #fff;
+  --clr-primary: #d0d6f9;
   --clr-gray: #97979726;
   --clr-hover: #979797;
-  /* --clr-???:#D0D6F9; */
+  --clr-selection: #2a66c5;
 
-  --ff-primary: 'Bellefair', serif;
-  --ff-contents: 'Barlow', sans-serif;
+  --ff-primary: "Bellefair", serif;
+  --ff-contents: "Barlow", sans-serif;
+}
+
+::selection {
+  color: var(--clr-selection);
+  background-color: #fff;
 }
 
 *,
@@ -19,17 +24,20 @@
 }
 
 body,
-h1, 
+h1,
 h2,
 h3,
 h4,
 h5,
 p,
-ul, 
+ul,
 li {
-  margin:0;
+  margin: 0;
 }
 
+html {
+  background-color: black;
+}
 
 body {
   position: relative;
@@ -44,7 +52,7 @@ body {
   }
 }
 
-a{
+a {
   text-decoration: none;
   color: var(--clr-light);
 }
@@ -64,10 +72,18 @@ h5 {
   font-weight: 100;
 }
 
-h1 { font-size: min(max(5rem, 14vw) , 9.375rem); }
-h2 { font-size: min(max(3.5rem, 4vw) ,6.25rem); }
-h3 { font-size: min(max(2.5rem, 3vw) ,3.5rem); }
-h5 { font-size: min(max(1rem, 2vw), 1.75rem); }
+h1 {
+  font-size: min(max(5rem, 14vw), 9.375rem);
+}
+h2 {
+  font-size: min(max(3.5rem, 4vw), 6.25rem);
+}
+h3 {
+  font-size: min(max(2.5rem, 3vw), 3.5rem);
+}
+h5 {
+  font-size: min(max(1rem, 2vw), 1.75rem);
+}
 
 ul {
   padding: 0;
@@ -95,7 +111,7 @@ button {
   z-index: -999;
 }
 
-.wrap{
+.wrap {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -130,11 +146,11 @@ header {
 }
 
 @media (max-width: 70em) {
-  header{
+  header {
     padding-top: 0;
   }
-  
-  .line{
+
+  .line {
     display: none;
   }
 }
@@ -183,13 +199,12 @@ header {
   user-select: none;
 }
 
-@-moz-document url-prefix(){
-  @media (max-width:40em) {
-    .nav-container::before{
+@-moz-document url-prefix() {
+  @media (max-width: 40em) {
+    .nav-container::before {
       background: linear-gradient(to bottom, #20232cfb 50%, #2d4661ec);
     }
   }
-
 }
 
 .nav-container ul {
@@ -233,13 +248,10 @@ header {
   background: url(../assets/shared/icon-close.svg);
 }
 
-@keyframes navline{
-  0%{
-    width: 0%;
+@-webkit-keyframes nav-slide {
+  0% {
   }
-
-  100%{
-    width:100%;
+  10% {
   }
 }
 
@@ -258,9 +270,9 @@ header {
     position: relative;
     padding-bottom: 2em;
   }
-  
-  .nav-container li a::after{
-    content: '';
+
+  .nav-container li a::after {
+    content: "";
     display: inline-block;
     position: absolute;
     bottom: 0;
@@ -268,25 +280,23 @@ header {
     height: 100%;
     width: 0%;
     padding-bottom: 2em;
-    transition: width ease-in-out .15s;
-    -webkit-transition: width ease-in-out .15s;
-    -moz-transition: width ease-in-out .15s;
+    transition: width ease-in-out 0.15s;
   }
-  
+
   .nav-container .select a::after,
-  .nav-container .select a:hover::after{
+  .nav-container .select a:hover::after {
     width: 100%;
     border-bottom: 2px solid var(--clr-light);
   }
-  
-  .nav-container li a:hover::after{
+
+  .nav-container li a:hover::after {
     border-bottom: 2px solid var(--clr-hover);
     width: 100%;
   }
 }
 
 @media (max-width: 40em) {
-  .nav-container{
+  .nav-container {
     justify-content: flex-start;
     align-items: flex-start;
     position: absolute;
@@ -295,11 +305,10 @@ header {
     padding: calc(4em + 10vh) 2em;
     height: 100vh;
     transform: translateX(100%);
-    transition: transform .2s linear;
-    -webkit-transition: transform .2s linear;
-    -moz-transition: transform .2s linear;
+    transition: transform 0.2s linear;
+    -webkit-transition: -webkit-transform 0.2s linear;
   }
-  
+
   .nav-container ul {
     flex-direction: column;
     align-items: flex-start;
@@ -310,15 +319,15 @@ header {
     display: inline-block;
   }
 
-  #nav-checkbox:checked + .icon-container .icon-hamberger{
+  #nav-checkbox:checked + .icon-container .icon-hamberger {
     display: none;
   }
 
-  #nav-checkbox:checked ~ .nav-container{
+  #nav-checkbox:checked ~ .nav-container {
     transform: translateX(0%);
   }
 
-  #nav-checkbox:checked +.icon-container .icon-close{
+  #nav-checkbox:checked + .icon-container .icon-close {
     display: block;
   }
 }
@@ -341,8 +350,8 @@ header {
   width: min(80%, 28rem);
 }
 
-@media (max-width:70em) {
-  .container{
+@media (max-width: 70em) {
+  .container {
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -353,7 +362,6 @@ header {
 /* ----------------------- */
 /*         EXPLORE         */
 /* ----------------------- */
-
 
 .explore {
   position: relative;
@@ -366,8 +374,8 @@ header {
   font-size: 2rem;
 }
 
-.explore::before{
-  content: '';
+.explore::before {
+  content: "";
   position: absolute;
   display: block;
   width: 90%;
@@ -380,28 +388,28 @@ header {
   -webkit-backdrop-filter: blur(16px);
   background-color: var(--clr-gray);
   box-shadow: 0px 0px 5px 5px var(--clr-gray);
-  transition: .15s all ease-out;
-  -webkit-transition: .15s all ease-out;
-  -moz-transition: .15s all ease-out;
+  transition: 0.15s all ease-out;
+  -webkit-transition: 0.15s all ease-out;
+  -moz-transition: 0.15s all ease-out;
   z-index: -1;
 }
 
-@media (min-width:70em) {
+@media (min-width: 70em) {
   .explore:hover::before {
     width: 140%;
     height: 140%;
   }
 }
 
-@media (max-width:70em) {
+@media (max-width: 70em) {
   .explore:active::before {
     width: 140%;
     height: 140%;
   }
 }
 
-@media (max-width:40em) {
-  .explore{
+@media (max-width: 40em) {
+  .explore {
     width: 9.375rem;
     height: 9.375rem;
     font-size: 1.25rem;
