@@ -4,7 +4,9 @@
   --clr-dark: #0B0D17;
   --clr-light: #FFF;
   --clr-primary: #D0D6F9;
-  --clr-nav: #979797;
+  --clr-gray: #97979726;
+  --clr-hover: #979797;
+  /* --clr-???:#D0D6F9; */
 
   --ff-primary: 'Bellefair', serif;
   --ff-contents: 'Barlow', sans-serif;
@@ -158,13 +160,15 @@ header {
 /* ----------------------- */
 
 .nav-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: max((16em + 36vw), 60%);
   max-width: 80%;
   padding: 2em 0 0 0;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .nav-container::before {
@@ -174,10 +178,18 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--clr-nav);
-  opacity: 0.1;
+  background-color: var(--clr-gray);
   z-index: -1;
   user-select: none;
+}
+
+@-moz-document url-prefix(){
+  @media (max-width:40em) {
+    .nav-container::before{
+      background: linear-gradient(to bottom, #20232cfb 50%, #2d4661ec);
+    }
+  }
+
 }
 
 .nav-container ul {
@@ -210,7 +222,6 @@ header {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  transition: transform .2s ease-out;
 }
 
 .icon-hamberger {
@@ -258,6 +269,8 @@ header {
     width: 0%;
     padding-bottom: 2em;
     transition: width ease-in-out .15s;
+    -webkit-transition: width ease-in-out .15s;
+    -moz-transition: width ease-in-out .15s;
   }
   
   .nav-container .select a::after,
@@ -267,7 +280,7 @@ header {
   }
   
   .nav-container li a:hover::after{
-    border-bottom: 2px solid var(--clr-nav);
+    border-bottom: 2px solid var(--clr-hover);
     width: 100%;
   }
 }
@@ -283,6 +296,8 @@ header {
     height: 100vh;
     transform: translateX(100%);
     transition: transform .2s linear;
+    -webkit-transition: transform .2s linear;
+    -moz-transition: transform .2s linear;
   }
   
   .nav-container ul {
@@ -362,9 +377,12 @@ header {
   transform: translate(-50%, -50%);
   border-radius: 50%;
   backdrop-filter: blur(16px);
-  background-color: #97979726;
-  box-shadow: 0px 0px 5px 5px #97979726;
+  -webkit-backdrop-filter: blur(16px);
+  background-color: var(--clr-gray);
+  box-shadow: 0px 0px 5px 5px var(--clr-gray);
   transition: .15s all ease-out;
+  -webkit-transition: .15s all ease-out;
+  -moz-transition: .15s all ease-out;
   z-index: -1;
 }
 
