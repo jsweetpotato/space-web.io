@@ -1,0 +1,158 @@
+@media (max-width: 40em) {
+  body {
+    background-color: #0d1018;
+    z-index: -9999;
+  }
+}
+
+.dots {
+  margin: 0;
+}
+
+.dot {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
+}
+
+.dot + * {
+  margin-left: 0.5em;
+}
+
+.dot span {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-top: 0.5em;
+  background-color: var(--clr-gray);
+  border-radius: 50%;
+  transition: 0.1s linear background-color;
+  pointer-events: none;
+}
+
+.dot:hover span {
+  background-color: var(--clr-hover);
+}
+
+.dot-select span {
+  background-color: var(--clr-light);
+}
+
+.dot-select:hover span {
+  background-color: var(--clr-light);
+}
+
+.container {
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: flex-start;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-basis: 60%;
+}
+
+@media (min-width: 70em) {
+  .info {
+    min-height: 34vh;
+  }
+
+  #bio {
+    max-width: 80%;
+  }
+
+  .dots {
+    margin-bottom: 5rem;
+  }
+}
+
+.info {
+  margin-top: auto;
+  margin-bottom: calc(2rem + 2vw);
+}
+
+#name {
+  margin-bottom: 0.3em;
+}
+
+#image {
+  align-self: flex-end;
+  height: calc(30rem + 10vw);
+  max-width: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 70em) {
+  .content {
+    flex-direction: column;
+  }
+
+  .group {
+    justify-content: space-between;
+  }
+
+  #bio {
+    max-width: 80%;
+    min-height: 7em;
+    margin-inline: auto;
+  }
+
+  .dots {
+    margin-bottom: calc(4em + 2vw);
+  }
+
+  #image {
+    object-fit: cover;
+    align-self: center;
+    justify-self: flex-end;
+  }
+
+  .dot {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 40em) {
+  .container {
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .content {
+    flex-direction: column-reverse;
+  }
+
+  .group {
+    flex-direction: column-reverse;
+  }
+
+  h5 {
+    margin-top: calc(5rem + 6vw);
+  }
+
+  #image {
+    height: calc(14rem + 14vw);
+    width: 100%;
+    object-fit: contain;
+    border-bottom: 1px solid var(--clr-gray);
+  }
+
+  #bio {
+    max-width: 100%;
+  }
+
+  .dots {
+    margin: calc(1em + 2vw) 0;
+  }
+}

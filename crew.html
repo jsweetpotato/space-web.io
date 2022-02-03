@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/utilities.css" />
+    <link rel="stylesheet" href="./css/crew.css" />
+    <script src="./js/navigation.js" defer></script>
+    <script src="./js/crew.js" defer></script>
+
+    <title>Frontend Mentor | Space tourism website</title>
+  </head>
+  <body>
+    <picture>
+      <source
+        media="(min-width: 70em)"
+        srcset="./assets/crew/background-crew-desktop.jpg"
+      />
+      <source
+        media="(min-width: 30em)"
+        srcset="./assets/crew/background-crew-tablet.jpg"
+      />
+      <source
+        media="(min-width: 10em)"
+        srcset="./assets/crew/background-crew-mobile.jpg"
+      />
+      <img
+        src="./assets/crew/background-crew-desktop.jpg"
+        alt="background"
+        class="background"
+      />
+    </picture>
+    <div class="wrap">
+      <header>
+        <a href="index.html" id="logo"></a>
+        <div class="line"></div>
+        <input type="checkbox" id="nav-checkbox" />
+        <label for="nav-checkbox" class="icon-container">
+          <span class="icon-hamberger" aria-label="contents menu button"></span>
+          <span class="icon-close" aria-label="contetents close button"></span>
+        </label>
+        <nav class="nav-container" aria-label="primary navigation">
+          <ul>
+            <li id="home">
+              <a href="./index.html"><span aria-hidden="true">00</span>Home</a>
+            </li>
+            <li id="destination">
+              <a href="./destination.html"
+                ><span aria-hidden="true">01</span>Destination</a
+              >
+            </li>
+            <li id="crew" class="select">
+              <a href="./crew.html"><span aria-hidden="true">02</span>Crew</a>
+            </li>
+            <li id="technology">
+              <a href="./technology.html"
+                ><span aria-hidden="true">03</span>Technology</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div class="container">
+        <h5><span>02</span> Meet your crew</h5>
+        <div class="content">
+          <div class="group">
+            <div class="info">
+              <h4 id="role">Mission Specialist</h4>
+              <h3 id="name">Mark Shuttleworth</h3>
+              <p id="bio">
+                Mark Richard Shuttleworth is the founder and CEO of Canonical,
+                the company behind the Linux-based Ubuntu operating system.
+                Shuttleworth became the first South African to travel to space
+                as a space tourist.
+              </p>
+            </div>
+            <div class="dots">
+              <div class="dot" data-count="0"><span></span></div>
+              <div class="dot dot-select" data-count="1"><span></span></div>
+              <div class="dot" data-count="2"><span></span></div>
+              <div class="dot" data-count="3"><span></span></div>
+            </div>
+          </div>
+          <img
+            id="image"
+            src="./assets/crew/image-mark-shuttleworth.png"
+            alt="crew image"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
