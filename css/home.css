@@ -1,5 +1,11 @@
 h5 {
   color: var(--clr-secondary);
+  margin-top: 0;
+}
+
+.container {
+  align-items: center;
+  justify-content: space-between;
 }
 
 .content {
@@ -8,11 +14,17 @@ h5 {
 
 @media (min-width: 70em) {
   .content {
-    max-width: 40%;
+    max-width: 50%;
   }
 }
 
-.background{
+@media (max-width: 70em) {
+  .container {
+    justify-content: center;
+  }
+}
+
+.background {
   height: 100%;
   object-fit: cover;
 }
@@ -50,6 +62,12 @@ h5 {
   z-index: -1;
 }
 
+
+@media (min-width:70em) {
+  .explore{
+    margin-top: 10vh;
+  }
+}
 @-webkit-keyframes explore-active {
   0% {
     width: 90%;

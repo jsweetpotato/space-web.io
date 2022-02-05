@@ -2,7 +2,7 @@
   body {
     background-image: url(../assets/destination/background-destination-mobile.jpg);
     background-size: cover;
-    z-index: -9999;
+    z-index: -999;
   }
 }
 
@@ -12,8 +12,6 @@
 
 .container {
   flex-direction: column;
-  min-height: 100vh;
-  align-items: flex-start;
   justify-content: flex-start;
 }
 
@@ -49,7 +47,7 @@
 }
 
 .info p {
-  max-width: 40rem;
+  max-width: 50rem;
   min-height: 8rem;
 }
 
@@ -62,7 +60,6 @@
   display: flex;
   gap: 1rem;
   padding-top: calc(0.5rem + 1vw);
-  margin-bottom: 5rem;
   border-top: 1px solid var(--clr-gray);
 }
 
@@ -100,6 +97,11 @@
 
   .info p {
     min-height: 5rem;
+    max-width: 37.5rem;
+  }
+
+  .planet-info {
+    margin-bottom: 5rem;
   }
 }
 

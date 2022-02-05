@@ -45,5 +45,27 @@ function showDestination(data) {
     const text = document.querySelector(".planet-nav ul .select");
     text.classList.remove("select");
     e.target.classList.add("select");
+
+    // blink animation
+    document.querySelectorAll(".blink").forEach(el => {
+      el.animate(
+        [
+          // keyframes
+          {
+            transform: "translateY(0px)",
+            opacity: 0,
+          },
+          {
+            transform: "translateY(0px)",
+            opacity: 1,
+          },
+        ],
+        {
+          // animation
+          duration: 300,
+          easing: "cubic-bezier(0.215, 0.610, 0.355, 1)",
+        }
+      );
+    });
   });
 }

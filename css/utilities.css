@@ -46,7 +46,7 @@ html {
 body {
   position: relative;
   font-family: var(--ff-contents);
-  line-height: 1.6;
+  line-height: 2;
   color: var(--clr-light);
 }
 
@@ -122,9 +122,8 @@ h4 {
 }
 
 h5 {
-  margin-top: 4rem;
-  font-size: min(max(1rem, 2vw), 1.75rem);
   margin-top: calc(4rem + 6vw);
+  font-size: min(max(1rem, 2vw), 1.75rem);
   font-family: var(--ff-subtitle);
   text-transform: uppercase;
   letter-spacing: 0.12rem;
@@ -156,7 +155,7 @@ p {
 }
 
 @media (max-width: 40em) {
-  .background{
+  .background {
     height: auto;
     object-fit: contain;
   }
@@ -175,6 +174,7 @@ header {
   width: 100%;
   padding: 2em 0;
   z-index: 666;
+  pointer-events: none;
 }
 
 .line {
@@ -203,6 +203,7 @@ header {
   height: 3rem;
   margin-left: calc(1em + 2vw);
   background: url(../assets/shared/logo.svg) no-repeat center / cover;
+  pointer-events: all;
 }
 
 @media (max-width: 40em) {
@@ -227,6 +228,7 @@ header {
   padding: 2em 0 0 0;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  pointer-events: all;
 }
 
 .nav-container::before {
@@ -270,6 +272,8 @@ header {
   margin-top: calc(1.25em + 2vw);
   margin-right: calc(1em + 2vw);
   z-index: 10;
+  pointer-events: all;
+  cursor: pointer;
 }
 
 .icon-container span {
@@ -403,9 +407,9 @@ header {
 .container {
   margin-inline: auto;
   width: 80%;
+  max-width: 90em;
+  min-height: 100vh;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
 }
 
 .content {
@@ -423,4 +427,23 @@ header {
   .content {
     text-align: center;
   }
+}
+
+/* ----------------------- */
+/*     BLINK ANIMATION     */
+/* ----------------------- */
+
+@keyframes blink {
+  0%{
+    opacity: 0;
+    transform: translateY(10%);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.blink{
+  animation: blink 1.5s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
