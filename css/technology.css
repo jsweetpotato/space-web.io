@@ -117,8 +117,8 @@
 }
 
 .btns * {
-  width: calc(1.8em + 1vw);
-  height: calc(1.8em + 1vw);
+  width: min(max(1.8rem , 4vw), 6rem);
+  height: min(max(1.8rem , 4vw), 6rem);
   border-radius: 50%;
   color: var(--clr-light);
   border: 1px solid var(--clr-hover);
@@ -127,6 +127,7 @@
   transition: 0.15s border ease, 0.1s ease background-color;
   cursor: pointer;
   user-select: none;
+  text-align: center;
 }
 
 .btns *:hover {
