@@ -1,3 +1,10 @@
+@media (max-width: 40em) {
+.background{
+  height: 100%;
+  object-fit: cover;
+}
+}
+
 .container {
   flex-direction: column;
 }
